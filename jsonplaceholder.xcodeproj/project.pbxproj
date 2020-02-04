@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		B241B9E423E9A7A200630726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B241B9E223E9A7A200630726 /* LaunchScreen.storyboard */; };
 		B241B9EF23E9A7A200630726 /* jsonplaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B9EE23E9A7A200630726 /* jsonplaceholderTests.swift */; };
 		B241B9FA23E9A7A200630726 /* jsonplaceholderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B9F923E9A7A200630726 /* jsonplaceholderUITests.swift */; };
+		B2A6C6F123EA0F0000807822 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C6F023EA0F0000807822 /* Users.swift */; };
+		B2A6C6F323EA0F4E00807822 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C6F223EA0F4E00807822 /* Albums.swift */; };
+		B2A6C6F523EA0F7300807822 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C6F423EA0F7300807822 /* Photos.swift */; };
 		D471150268C196672E18CAA3 /* Pods_jsonplaceholderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF569A4F66EF6697D633DD8 /* Pods_jsonplaceholderTests.framework */; };
 		F0BA70AACD2DB2A22730668A /* Pods_jsonplaceholder_jsonplaceholderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26431AC2E9C81E0AF008C560 /* Pods_jsonplaceholder_jsonplaceholderUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,9 @@
 		B241B9F523E9A7A200630726 /* jsonplaceholderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jsonplaceholderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B241B9F923E9A7A200630726 /* jsonplaceholderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonplaceholderUITests.swift; sourceTree = "<group>"; };
 		B241B9FB23E9A7A200630726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2A6C6F023EA0F0000807822 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		B2A6C6F223EA0F4E00807822 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
+		B2A6C6F423EA0F7300807822 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		B3A31033DFFE6BBF53A251C3 /* Pods-jsonplaceholder-jsonplaceholderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsonplaceholder-jsonplaceholderUITests.release.xcconfig"; path = "Target Support Files/Pods-jsonplaceholder-jsonplaceholderUITests/Pods-jsonplaceholder-jsonplaceholderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B412C3FF512D59A952C1D6E7 /* Pods-jsonplaceholderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsonplaceholderTests.release.xcconfig"; path = "Target Support Files/Pods-jsonplaceholderTests/Pods-jsonplaceholderTests.release.xcconfig"; sourceTree = "<group>"; };
 		E376DED9F10736633F7398A8 /* Pods-jsonplaceholder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsonplaceholder.debug.xcconfig"; path = "Target Support Files/Pods-jsonplaceholder/Pods-jsonplaceholder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +107,6 @@
 				4CBBC2BBCF1FF0E14ABAC970 /* Pods-jsonplaceholderTests.debug.xcconfig */,
 				B412C3FF512D59A952C1D6E7 /* Pods-jsonplaceholderTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,6 +152,7 @@
 				B241B9E023E9A7A200630726 /* Assets.xcassets */,
 				B241B9E223E9A7A200630726 /* LaunchScreen.storyboard */,
 				B241B9E523E9A7A200630726 /* Info.plist */,
+				B2A6C6F623EA0F7E00807822 /* Entities */,
 			);
 			path = jsonplaceholder;
 			sourceTree = "<group>";
@@ -167,6 +173,16 @@
 				B241B9FB23E9A7A200630726 /* Info.plist */,
 			);
 			path = jsonplaceholderUITests;
+			sourceTree = "<group>";
+		};
+		B2A6C6F623EA0F7E00807822 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B2A6C6F023EA0F0000807822 /* Users.swift */,
+				B2A6C6F223EA0F4E00807822 /* Albums.swift */,
+				B2A6C6F423EA0F7300807822 /* Photos.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +424,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2A6C6F523EA0F7300807822 /* Photos.swift in Sources */,
+				B2A6C6F323EA0F4E00807822 /* Albums.swift in Sources */,
+				B2A6C6F123EA0F0000807822 /* Users.swift in Sources */,
 				B241B9DC23E9A7A000630726 /* ViewController.swift in Sources */,
 				B241B9D823E9A7A000630726 /* AppDelegate.swift in Sources */,
 				B241B9DA23E9A7A000630726 /* SceneDelegate.swift in Sources */,
