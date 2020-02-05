@@ -17,6 +17,29 @@
 		B2A6C6F123EA0F0000807822 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C6F023EA0F0000807822 /* Users.swift */; };
 		B2A6C6F323EA0F4E00807822 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C6F223EA0F4E00807822 /* Albums.swift */; };
 		B2A6C6F523EA0F7300807822 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C6F423EA0F7300807822 /* Photos.swift */; };
+		B2A6C70423EB000700807822 /* AlbumServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C70323EB000700807822 /* AlbumServices.swift */; };
+		B2A6C70623EB001700807822 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C70523EB001700807822 /* UserServices.swift */; };
+		B2A6C70823EB004B00807822 /* UsersListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C70723EB004B00807822 /* UsersListContract.swift */; };
+		B2A6C70A23EB007100807822 /* UsersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C70923EB007100807822 /* UsersListRouter.swift */; };
+		B2A6C70C23EB007A00807822 /* UsersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C70B23EB007A00807822 /* UsersListPresenter.swift */; };
+		B2A6C70E23EB008500807822 /* UsersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C70D23EB008500807822 /* UsersListInteractor.swift */; };
+		B2A6C71023EB009100807822 /* UsersListTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C70F23EB009100807822 /* UsersListTableViewProvider.swift */; };
+		B2A6C71223EB009D00807822 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C71123EB009D00807822 /* UsersListViewController.swift */; };
+		B2A6C71423EB00A700807822 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C71323EB00A700807822 /* UsersListView.swift */; };
+		B2A6C71B23EB00FB00807822 /* UsersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C71923EB00FB00807822 /* UsersListCell.swift */; };
+		B2A6C71C23EB00FB00807822 /* UsersListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A6C71A23EB00FB00807822 /* UsersListCell.xib */; };
+		B2A6C71F23EB01C600807822 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C71D23EB01C600807822 /* UserDetailViewController.swift */; };
+		B2A6C72023EB01C600807822 /* UsersDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A6C71E23EB01C600807822 /* UsersDetailViewController.xib */; };
+		B2A6C72223EB025700807822 /* UserDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72123EB025700807822 /* UserDetailInteractor.swift */; };
+		B2A6C72423EB026A00807822 /* UserDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72323EB026A00807822 /* UserDetailContract.swift */; };
+		B2A6C72623EB027500807822 /* UserDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72523EB027500807822 /* UserDetailRouter.swift */; };
+		B2A6C72823EB027C00807822 /* UserDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72723EB027C00807822 /* UserDetailPresenter.swift */; };
+		B2A6C72A23EB02C300807822 /* AlbumDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72923EB02C300807822 /* AlbumDetailContract.swift */; };
+		B2A6C72C23EB02CB00807822 /* AlbumDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72B23EB02CB00807822 /* AlbumDetailRouter.swift */; };
+		B2A6C72E23EB02D400807822 /* AlbumDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72D23EB02D400807822 /* AlbumDetailPresenter.swift */; };
+		B2A6C73023EB02DA00807822 /* AlbumDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C72F23EB02DA00807822 /* AlbumDetailInteractor.swift */; };
+		B2A6C73323EB02E600807822 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A6C73123EB02E600807822 /* AlbumDetailViewController.swift */; };
+		B2A6C73423EB02E600807822 /* AlbumDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A6C73223EB02E600807822 /* AlbumDetailViewController.xib */; };
 		D471150268C196672E18CAA3 /* Pods_jsonplaceholderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF569A4F66EF6697D633DD8 /* Pods_jsonplaceholderTests.framework */; };
 		F0BA70AACD2DB2A22730668A /* Pods_jsonplaceholder_jsonplaceholderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26431AC2E9C81E0AF008C560 /* Pods_jsonplaceholder_jsonplaceholderUITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +82,29 @@
 		B2A6C6F023EA0F0000807822 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		B2A6C6F223EA0F4E00807822 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		B2A6C6F423EA0F7300807822 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		B2A6C70323EB000700807822 /* AlbumServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumServices.swift; sourceTree = "<group>"; };
+		B2A6C70523EB001700807822 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		B2A6C70723EB004B00807822 /* UsersListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListContract.swift; sourceTree = "<group>"; };
+		B2A6C70923EB007100807822 /* UsersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListRouter.swift; sourceTree = "<group>"; };
+		B2A6C70B23EB007A00807822 /* UsersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListPresenter.swift; sourceTree = "<group>"; };
+		B2A6C70D23EB008500807822 /* UsersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListInteractor.swift; sourceTree = "<group>"; };
+		B2A6C70F23EB009100807822 /* UsersListTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewProvider.swift; sourceTree = "<group>"; };
+		B2A6C71123EB009D00807822 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
+		B2A6C71323EB00A700807822 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		B2A6C71923EB00FB00807822 /* UsersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListCell.swift; sourceTree = "<group>"; };
+		B2A6C71A23EB00FB00807822 /* UsersListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListCell.xib; sourceTree = "<group>"; };
+		B2A6C71D23EB01C600807822 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		B2A6C71E23EB01C600807822 /* UsersDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersDetailViewController.xib; sourceTree = "<group>"; };
+		B2A6C72123EB025700807822 /* UserDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInteractor.swift; sourceTree = "<group>"; };
+		B2A6C72323EB026A00807822 /* UserDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailContract.swift; sourceTree = "<group>"; };
+		B2A6C72523EB027500807822 /* UserDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRouter.swift; sourceTree = "<group>"; };
+		B2A6C72723EB027C00807822 /* UserDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPresenter.swift; sourceTree = "<group>"; };
+		B2A6C72923EB02C300807822 /* AlbumDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailContract.swift; sourceTree = "<group>"; };
+		B2A6C72B23EB02CB00807822 /* AlbumDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailRouter.swift; sourceTree = "<group>"; };
+		B2A6C72D23EB02D400807822 /* AlbumDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailPresenter.swift; sourceTree = "<group>"; };
+		B2A6C72F23EB02DA00807822 /* AlbumDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailInteractor.swift; sourceTree = "<group>"; };
+		B2A6C73123EB02E600807822 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		B2A6C73223EB02E600807822 /* AlbumDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumDetailViewController.xib; sourceTree = "<group>"; };
 		B3A31033DFFE6BBF53A251C3 /* Pods-jsonplaceholder-jsonplaceholderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsonplaceholder-jsonplaceholderUITests.release.xcconfig"; path = "Target Support Files/Pods-jsonplaceholder-jsonplaceholderUITests/Pods-jsonplaceholder-jsonplaceholderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B412C3FF512D59A952C1D6E7 /* Pods-jsonplaceholderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsonplaceholderTests.release.xcconfig"; path = "Target Support Files/Pods-jsonplaceholderTests/Pods-jsonplaceholderTests.release.xcconfig"; sourceTree = "<group>"; };
 		E376DED9F10736633F7398A8 /* Pods-jsonplaceholder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsonplaceholder.debug.xcconfig"; path = "Target Support Files/Pods-jsonplaceholder/Pods-jsonplaceholder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +246,8 @@
 		B2A6C6F923EA0FD800807822 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B2A6C70523EB001700807822 /* UserServices.swift */,
+				B2A6C70323EB000700807822 /* AlbumServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -221,21 +269,19 @@
 				B2A6C6FF23EA105F00807822 /* Users List */,
 				B2A6C6FE23EA105400807822 /* User Detail */,
 				B2A6C6FD23EA104A00807822 /* Album Detail */,
-				B2A6C6FC23EA102900807822 /* Favorite Users List */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		B2A6C6FC23EA102900807822 /* Favorite Users List */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Favorite Users List";
 			sourceTree = "<group>";
 		};
 		B2A6C6FD23EA104A00807822 /* Album Detail */ = {
 			isa = PBXGroup;
 			children = (
+				B2A6C72923EB02C300807822 /* AlbumDetailContract.swift */,
+				B2A6C72B23EB02CB00807822 /* AlbumDetailRouter.swift */,
+				B2A6C72D23EB02D400807822 /* AlbumDetailPresenter.swift */,
+				B2A6C72F23EB02DA00807822 /* AlbumDetailInteractor.swift */,
+				B2A6C73123EB02E600807822 /* AlbumDetailViewController.swift */,
+				B2A6C73223EB02E600807822 /* AlbumDetailViewController.xib */,
 			);
 			path = "Album Detail";
 			sourceTree = "<group>";
@@ -243,6 +289,12 @@
 		B2A6C6FE23EA105400807822 /* User Detail */ = {
 			isa = PBXGroup;
 			children = (
+				B2A6C72323EB026A00807822 /* UserDetailContract.swift */,
+				B2A6C72523EB027500807822 /* UserDetailRouter.swift */,
+				B2A6C72723EB027C00807822 /* UserDetailPresenter.swift */,
+				B2A6C72123EB025700807822 /* UserDetailInteractor.swift */,
+				B2A6C71D23EB01C600807822 /* UserDetailViewController.swift */,
+				B2A6C71E23EB01C600807822 /* UsersDetailViewController.xib */,
 			);
 			path = "User Detail";
 			sourceTree = "<group>";
@@ -250,6 +302,15 @@
 		B2A6C6FF23EA105F00807822 /* Users List */ = {
 			isa = PBXGroup;
 			children = (
+				B2A6C70723EB004B00807822 /* UsersListContract.swift */,
+				B2A6C70923EB007100807822 /* UsersListRouter.swift */,
+				B2A6C70B23EB007A00807822 /* UsersListPresenter.swift */,
+				B2A6C70D23EB008500807822 /* UsersListInteractor.swift */,
+				B2A6C70F23EB009100807822 /* UsersListTableViewProvider.swift */,
+				B2A6C71123EB009D00807822 /* UsersListViewController.swift */,
+				B2A6C71323EB00A700807822 /* UsersListView.swift */,
+				B2A6C71923EB00FB00807822 /* UsersListCell.swift */,
+				B2A6C71A23EB00FB00807822 /* UsersListCell.xib */,
 			);
 			path = "Users List";
 			sourceTree = "<group>";
@@ -386,6 +447,9 @@
 			files = (
 				B241B9E423E9A7A200630726 /* LaunchScreen.storyboard in Resources */,
 				B241B9E123E9A7A200630726 /* Assets.xcassets in Resources */,
+				B2A6C72023EB01C600807822 /* UsersDetailViewController.xib in Resources */,
+				B2A6C73423EB02E600807822 /* AlbumDetailViewController.xib in Resources */,
+				B2A6C71C23EB00FB00807822 /* UsersListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,10 +578,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A6C6F523EA0F7300807822 /* Photos.swift in Sources */,
+				B2A6C70E23EB008500807822 /* UsersListInteractor.swift in Sources */,
+				B2A6C73323EB02E600807822 /* AlbumDetailViewController.swift in Sources */,
+				B2A6C70A23EB007100807822 /* UsersListRouter.swift in Sources */,
+				B2A6C70423EB000700807822 /* AlbumServices.swift in Sources */,
+				B2A6C70C23EB007A00807822 /* UsersListPresenter.swift in Sources */,
+				B2A6C71223EB009D00807822 /* UsersListViewController.swift in Sources */,
+				B2A6C70623EB001700807822 /* UserServices.swift in Sources */,
+				B2A6C71023EB009100807822 /* UsersListTableViewProvider.swift in Sources */,
 				B2A6C6F323EA0F4E00807822 /* Albums.swift in Sources */,
+				B2A6C72223EB025700807822 /* UserDetailInteractor.swift in Sources */,
+				B2A6C71B23EB00FB00807822 /* UsersListCell.swift in Sources */,
+				B2A6C72E23EB02D400807822 /* AlbumDetailPresenter.swift in Sources */,
 				B2A6C6F123EA0F0000807822 /* Users.swift in Sources */,
+				B2A6C73023EB02DA00807822 /* AlbumDetailInteractor.swift in Sources */,
 				B241B9D823E9A7A000630726 /* AppDelegate.swift in Sources */,
+				B2A6C70823EB004B00807822 /* UsersListContract.swift in Sources */,
 				B241B9DA23E9A7A000630726 /* SceneDelegate.swift in Sources */,
+				B2A6C71F23EB01C600807822 /* UserDetailViewController.swift in Sources */,
+				B2A6C72623EB027500807822 /* UserDetailRouter.swift in Sources */,
+				B2A6C72C23EB02CB00807822 /* AlbumDetailRouter.swift in Sources */,
+				B2A6C72A23EB02C300807822 /* AlbumDetailContract.swift in Sources */,
+				B2A6C71423EB00A700807822 /* UsersListView.swift in Sources */,
+				B2A6C72823EB027C00807822 /* UserDetailPresenter.swift in Sources */,
+				B2A6C72423EB026A00807822 /* UserDetailContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
