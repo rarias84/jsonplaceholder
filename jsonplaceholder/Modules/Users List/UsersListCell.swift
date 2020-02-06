@@ -9,16 +9,25 @@
 import UIKit
 
 class UsersListCell: UITableViewCell {
+    // MARK: - IBOutlet
+        @IBOutlet weak var nameLabel: UILabel!
+        @IBOutlet weak var usernameLabel: UILabel!
+        // MARK: - Properties
+        var data: User? {
+            didSet {
+                nameLabel.text = data?.name
+                usernameLabel.text = data?.username
+            }
+        }
+        // MARK: - View Lifecycle
+        override func awakeFromNib() {
+            super.awakeFromNib()
+            self.selectionStyle = .none
+        }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        override func prepareForReuse() {
+            super.prepareForReuse()
+            self.nameLabel.text   = ""
+            self.usernameLabel.text  = ""
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-}

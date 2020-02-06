@@ -7,6 +7,7 @@ target 'jsonplaceholder' do
 
   # Pods for jsonplaceholder
   pod 'SwiftMessages'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'jsonplaceholderTests' do
     inherit! :search_paths

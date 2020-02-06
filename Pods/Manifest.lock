@@ -1,18 +1,24 @@
 PODS:
+  - Kingfisher (5.13.0):
+    - Kingfisher/Core (= 5.13.0)
+  - Kingfisher/Core (5.13.0)
   - SwiftMessages (7.0.1):
     - SwiftMessages/App (= 7.0.1)
   - SwiftMessages/App (7.0.1)
 
 DEPENDENCIES:
+  - Kingfisher (~> 5.0)
   - SwiftMessages
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - SwiftMessages
 
 SPEC CHECKSUMS:
+  Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
   SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
 
-PODFILE CHECKSUM: 662da307312b4af874120175d5c8bcbea77a9146
+PODFILE CHECKSUM: c78ae82c128fbded4c144ecf8e473182d82109f5
 
 COCOAPODS: 1.8.4

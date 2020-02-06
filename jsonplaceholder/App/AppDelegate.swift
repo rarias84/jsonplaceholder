@@ -10,11 +10,37 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        self.window!.makeKeyAndVisible()
+        self.window!.overrideUserInterfaceStyle = .light
+
+        // Navbar setup
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
+        let button = UIBarButtonItemAppearance(style: .plain)
+        button.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.buttonAppearance = button
+        navBarAppearance.backgroundColor = .orangeApp
+        
+        navBarAppearance.shadowImage = nil
+        navBarAppearance.shadowColor = nil
+        
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        
         return true
     }
 
