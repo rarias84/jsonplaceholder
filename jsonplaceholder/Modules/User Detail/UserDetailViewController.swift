@@ -24,6 +24,14 @@ class UserDetailViewController: UIViewController, AlertDisplayer {
     @objc func refresh() {
         presenter?.refresh()
     }
+    
+    @objc func addFavorite() {
+        presenter?.addFavorite()
+    }
+    
+    @objc func removeFavorite() {
+        presenter?.removeFavorite()
+    }
 
     // MARK: - Properties
     var presenter: ViewToPresenterUserDetailProtocol?
@@ -31,6 +39,10 @@ class UserDetailViewController: UIViewController, AlertDisplayer {
 }
 
 extension UserDetailViewController: PresenterToViewUserDetailProtocol {
+    func favButtonShow(isFav: Bool) {
+        navigationItem.setRightBarButton(UIBarButtonItem(image: isFav ? .remove : .add, style: .plain, target: self, action: isFav ? #selector(removeFavorite) : #selector(addFavorite)), animated: true)        
+    }
+    
     func setupUI(with user: User) {
         overrideUserInterfaceStyle = .light
         DispatchQueue.main.async {
@@ -38,7 +50,7 @@ extension UserDetailViewController: PresenterToViewUserDetailProtocol {
             self.customView?.nameValue.text = user.name
             self.customView?.usernameValue.text = user.username
             self.customView?.emailValue.text = user.email
-            self.customView?.addressValue.text = user.address?.street
+            self.customView?.addressValue.text = "\((user.address?.street)!), \((user.address?.city)!), \((user.address?.zipcode)!)"
             self.customView?.phoneValue.text = user.phone
             self.customView?.websiteValue.text = user.website
             self.customView?.companyValue.text = user.company?.name
@@ -48,6 +60,12 @@ extension UserDetailViewController: PresenterToViewUserDetailProtocol {
     func showErrorMessage(_ message: String) {
         if isModal {
             self.displayErrorAlert(title: "", message: message)
+        }
+    }
+    
+    func showSuccessMessage(_ message: String) {
+        if isModal {
+            self.displaySuccessAlert(title: "", message: message)
         }
     }
     
@@ -72,5 +90,5 @@ extension UserDetailViewController: PresenterToViewUserDetailProtocol {
 
     func reloadData() {
         customView!.reloadDataInTableView()
-    }    
+    }
 }

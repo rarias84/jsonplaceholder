@@ -7,3 +7,34 @@
 //
 
 import Foundation
+import Combine
+
+class AlbumDetailInteractor: PresenterToInteractorAlbumDetailProtocol {
+    // MARK: Properties
+    var presenter: InteractorToPresenterAlbumDetailProtocol?
+    private var cancellable: AnyCancellable?
+    
+    func loadData(with id: String) {
+        print("Interactor receives the request from Presenter to load data from the server.")
+        self.cancellable = AlbumServices.getPhotos(with: id)
+        .print()
+        .sink(receiveCompletion: { [weak self] completion in
+            guard let self = self else { return }
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                self.presenter?.fetchDataFailure(errorCode: error)
+            }
+        },
+              receiveValue: { [weak self] value in
+                guard let self = self else { return }
+                self.presenter?.fetchDataSuccess(data: value.first!)
+        })
+        withExtendedLifetime(self.cancellable, {})
+    }
+    
+    func cancel() {
+        self.cancellable?.cancel()
+    }
+}

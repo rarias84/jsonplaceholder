@@ -12,4 +12,5 @@ enum UserDefaultsKeys: String, CaseIterable {
     case usersData
     case usersDetailData
     case usersFav
+    case albumsData
 }

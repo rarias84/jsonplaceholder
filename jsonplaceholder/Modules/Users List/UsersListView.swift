@@ -34,17 +34,15 @@ class UsersListView: UIView {
     private func setupUI() {
         segmentedControl = UISegmentedControl(frame: CGRect(x: 16, y: 5, width: UIScreen.main.bounds.size.width - 32, height: 30))
         segmentedControl.translatesAutoresizingMaskIntoConstraints = true
-        //segmentedControl.layer.borderColor = UIColor.black.cgColor
-        segmentedControl.backgroundColor = .orangeApp
+        segmentedControl.backgroundColor = .grayApp
         segmentedControl.layer.borderWidth = 0
         segmentedControl.tintColor = .white
-        segmentedControl.selectedSegmentTintColor = .grayApp
-        //segmentedControl.removeBorders()
+        segmentedControl.selectedSegmentTintColor = .orangeApp
         segmentedControl.replaceSegments(segments: ["Todos", "Favoritos"])
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black,
-                                                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)], for: .selected)
+                                                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], for: .normal)
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)], for: .normal)
+                                                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], for: .selected)
         addSubview(segmentedControl)
 
         tableView = UITableView(frame: .zero, style: .grouped)

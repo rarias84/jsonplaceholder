@@ -25,8 +25,8 @@ class UserDetailRouter: PresenterToRouterUserDetailProtocol {
     }
     
     func pushToAlbumDetail(on view: PresenterToViewUserDetailProtocol, with data: Album) {
-//        let userDetailViewController = UsersDetailViewController(data)
-//        let viewController = view as! UsersListViewController
-//        viewController.navigationController?.pushViewController(userDetailViewController, animated: true)
+        let albumDetailViewController = AlbumDetailRouter.createModule(with: data)
+        let viewController = view as! UserDetailViewController
+        viewController.navigationController?.pushViewController(albumDetailViewController, animated: true)
     }
 }

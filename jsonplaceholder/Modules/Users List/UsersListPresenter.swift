@@ -28,19 +28,21 @@ class UsersListPresenter: ViewToPresenterUsersListProtocol {
 
     func viewDidLoad() {
         print("Presenter is being notified that the View was loaded.")
-        getData()
+        getData(refresh: true)
     }
     
     func refresh() {
         print("Presenter is being notified that the View was refreshed.")
-        removeContentDataInView()
-        getData()
+        switch currentOpt {
+        case 1: getFavData()
+        default: getData(refresh: true)
+        }
     }
 
-    func getData() {
+    func getData(refresh: Bool) {
         removeContentDataInView()
         setLoadingTableView()
-        interactor?.loadUsers()
+        interactor?.loadUsers(isRefreshing: refresh)
     }
     
     func getFavData() {
@@ -73,9 +75,9 @@ class UsersListPresenter: ViewToPresenterUsersListProtocol {
     
     func changeControlSelection(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0: if currentOpt != 0 { currentOpt = 0 }; getData()
+        case 0: if currentOpt != 0 { currentOpt = 0 }; getData(refresh: false)
         case 1: if currentOpt != 1 { currentOpt = 1 }; getFavData()
-        default: currentOpt = 0; getData()
+        default: currentOpt = 0; getData(refresh: false)
         }
     }
 }
@@ -105,6 +107,7 @@ extension UsersListPresenter: InteractorToPresenterUsersListProtocol {
     
     func getFavDataFailure() {
         print("Empty data")
+        removeContentDataInView()
         setContentTableView()
     }
 }

@@ -25,7 +25,6 @@ class UsersListRouter: PresenterToRouterUsersListProtocol {
     }
     
     func pushToDetail(on view: PresenterToViewUsersListProtocol, with data: User) {
-//        let userDetailViewController = UsersDetailViewController(data)
         let userDetailViewController = UserDetailRouter.createModule(with: data)
         let viewController = view as! UsersListViewController
         viewController.navigationController?.pushViewController(userDetailViewController, animated: true)

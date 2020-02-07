@@ -15,7 +15,32 @@ struct User: Codable {
     let address: Address?
     let phone, website: String?
     let company: Company?
-    let isFavorite: Bool?
+    var isFavorite: Bool? = false
+    
+//    init(id: Int, name: String, username: String, email: String, address: Address, phone: String, website: String, company: Company, isFavorite: Bool) {
+//        self.id = id
+//        self.name = name
+//        self.username = username
+//        self.email = email
+//        self.address = address
+//        self.phone = phone
+//        self.website = website
+//        self.company = company
+//        self.isFavorite = isFavorite
+//    }
+//    
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        id = try values.decodeIfPresent(Int.self, forKey: .id)
+//        name = try values.decodeIfPresent(String.self, forKey: .name)
+//        username = try values.decodeIfPresent(String.self, forKey: .username)
+//        email = try values.decodeIfPresent(String.self, forKey: .email)
+//        address = try values.decodeIfPresent(Address.self, forKey: .address)
+//        phone = try values.decodeIfPresent(String.self, forKey: .phone)
+//        website = try values.decodeIfPresent(String.self, forKey: .website)
+//        company = try values.decodeIfPresent(Company.self, forKey: .company)
+//        isFavorite = try values.decodeIfPresent(Bool.self, forKey: .isFavorite)
+//    }
 }
 
 // MARK: - Address

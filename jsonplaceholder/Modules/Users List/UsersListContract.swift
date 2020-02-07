@@ -34,7 +34,7 @@ protocol ViewToPresenterUsersListProtocol {
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorUsersListProtocol {
     var presenter: InteractorToPresenterUsersListProtocol? { get set }
-    func loadUsers()
+    func loadUsers(isRefreshing: Bool)
     func loadFavUsers()
     func retrieveUser(at index: Int)
     func cancel()

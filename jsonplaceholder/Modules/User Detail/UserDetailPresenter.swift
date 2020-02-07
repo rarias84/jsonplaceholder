@@ -14,6 +14,7 @@ class UserDetailPresenter: ViewToPresenterUserDetailProtocol {
     var view: PresenterToViewUserDetailProtocol?
     var interactor: PresenterToInteractorUserDetailProtocol?
     var router: PresenterToRouterUserDetailProtocol?
+    
     private var currentOpt = 0
     
     let loadingTableViewProvider = LoadingTableView()
@@ -35,6 +36,14 @@ class UserDetailPresenter: ViewToPresenterUserDetailProtocol {
         print("Presenter is being notified that the View was loaded.")
         view?.setupUI(with: self.user)
         getData()
+        guard let data = UserDefaults.standard.retrieve(object: Users.self, fromKey: UserDefaultsKeys.usersFav.rawValue), !data.isEmpty else {
+            self.view?.favButtonShow(isFav: false)
+            return
+        }
+        let dataUser = data.filter({ (usr) -> Bool in
+            return usr.id == user.id
+        })
+        self.view?.favButtonShow(isFav: dataUser.first?.isFavorite == nil ? false : (dataUser.first?.isFavorite)!)
     }
     
     func refresh() {
@@ -42,11 +51,19 @@ class UserDetailPresenter: ViewToPresenterUserDetailProtocol {
         removeContentDataInView()
         getData()
     }
+    
+    func addFavorite() {
+        self.interactor?.addFavorite(at: user)
+    }
+    
+    func removeFavorite() {
+        self.interactor?.removeFavorite(at: user)
+    }
 
     func getData() {
         removeContentDataInView()
         setLoadingTableView()
-        interactor?.loadData()
+        interactor?.loadData(with: "\((self.user.id)!)")
     }
     
     func removeContentDataInView() {
@@ -93,5 +110,26 @@ extension UserDetailPresenter: InteractorToPresenterUserDetailProtocol {
     func getDataFailure() {
         print("Couldn't retrieve data")
         view?.showErrorMessage("Error al obtener la información.")
+    }
+    
+    func favAddedSuccess(with user: User) {
+        view?.showSuccessMessage("Favorito guardado/eliminado exitosamente.")
+        self.user = user
+        print(user)
+        self.view?.favButtonShow(isFav: user.isFavorite == nil ? false : (user.isFavorite)!)
+//        DispatchQueue.main.async {
+//            guard let data = UserDefaults.standard.retrieve(object: Users.self, fromKey: UserDefaultsKeys.usersFav.rawValue), !data.isEmpty else {
+//                self.view?.favButtonShow(isFav: false)
+//                return
+//            }
+//            let dataUser = data.filter({ (usr) -> Bool in
+//                return usr.id == user.id
+//            })
+//            self.view?.favButtonShow(isFav: dataUser.first?.isFavorite == nil ? false : (dataUser.first?.isFavorite)!)
+//        }
+    }
+    
+    func favAddedFailure() {
+        view?.showErrorMessage("Error guardar/eliminar favorito.")
     }
 }

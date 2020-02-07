@@ -26,19 +26,11 @@ class UserDetailTableViewProvider: NSObject, TableViewProvider {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: UsersListCell.reuseIdentifier, for: indexPath) as? UsersListCell else {
-//            return UITableViewCell()
-//        }
-//        if !albums.isEmpty {
-//            let data = albums[indexPath.row]
-//            cell.data = data
-//        }
-        
-        
         let cell = UITableViewCell(style: .default, reuseIdentifier: "AlbumsCell")
         if !albums.isEmpty {
             let data = albums[indexPath.row]
-            cell.textLabel?.text = data.title
+            cell.textLabel?.text = data.title?.capitalized
+            cell.textLabel?.font = .boldSystemFont(ofSize: 12)
         }
         return cell
     }
@@ -50,4 +42,3 @@ class UserDetailTableViewProvider: NSObject, TableViewProvider {
         }
     }
 }
-

@@ -11,16 +11,15 @@ import Combine
 
 enum AlbumServices {
     fileprivate static let manager = Manager()
-    fileprivate static let base = URL(string: APISetup.basePath)!
     
     enum Paths {
-        case albums
-        case photos
+        case albums(userId: String)
+        case photos(id: String)
         
         var path: String {
             switch self {
-            case .albums:   return "albums"
-            case .photos:   return "photos"
+            case .albums(let userId):   return "albums?userId=\(userId)"
+            case .photos(let id):       return "photos?id=\(id)"
             }
         }
     }
@@ -33,15 +32,17 @@ extension AlbumServices {
             .eraseToAnyPublisher()
     }
 
-    static func getAlbums() -> AnyPublisher<Albums, Error> {
-        var request = URLRequest(url: base.appendingPathComponent(Paths.albums.path))
+    static func getAlbums(with userId: String) -> AnyPublisher<Albums, Error> {
+        var request = URLRequest(url: URL(string: APISetup.basePath + Paths.albums(userId: userId).path.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!)
         request.allHTTPHeaderFields = APISetup.headers()
+        print(request)
         return run(request)
     }
     
-    static func getPhotos() -> AnyPublisher<Photos, Error> {
-        var request = URLRequest(url: base.appendingPathComponent(Paths.photos.path))
+    static func getPhotos(with id: String) -> AnyPublisher<Photos, Error> {
+        var request = URLRequest(url: URL(string: APISetup.basePath + Paths.photos(id: id).path.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!)
         request.allHTTPHeaderFields = APISetup.headers()
+        print(request)
         return run(request)
     }
 }

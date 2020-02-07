@@ -78,7 +78,7 @@ extension UsersListViewController {
         overrideUserInterfaceStyle = .light
         title = "Users"
         customView?.segmentedControl.selectedSegmentIndex = 0
-        customView?.segmentedControl.addTarget(self, action: #selector(selectionDidChange), for: .valueChanged)
+        customView?.segmentedControl.addTarget(self, action: #selector(selectionDidChange), for: .valueChanged) 
         customView?.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 }

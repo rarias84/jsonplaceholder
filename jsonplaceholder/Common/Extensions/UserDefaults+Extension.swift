@@ -9,12 +9,15 @@
 import Foundation
 
 extension UserDefaults {
-    func save<T: Encodable>(customObject object: T, inKey key: String) {
+    func save<T: Encodable>(customObject object: T, inKey key: String, _ completion: @escaping (Bool) -> Void) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(object) {
             self.set(encoded, forKey: key)
             print("-> did set model for key: \(key)")
+            completion(true)
+            return
         }
+        completion(false)
     }
 
     func retrieve<T: Decodable>(object type: T.Type, fromKey key: String) -> T? {

@@ -24,8 +24,8 @@ extension AlertDisplayer where Self: UIViewController {
         alert.backgroundColor = .greenAlert
         alert.button?.isHidden = true
         var config = SwiftMessages.defaultConfig
-        config.presentationStyle = .top
-        config.duration = SwiftMessages.Duration.seconds(seconds: 3.0)
+        config.presentationStyle = .bottom
+        config.duration = SwiftMessages.Duration.seconds(seconds: 2.0)
         DispatchQueue.main.async(execute: {
             SwiftMessages.show(config: config, view: alert)
         })
@@ -39,8 +39,8 @@ extension AlertDisplayer where Self: UIViewController {
         alert.backgroundColor = .redAlert
         alert.button?.isHidden = true
         var config = SwiftMessages.defaultConfig
-        config.presentationStyle = .top
-        config.duration = SwiftMessages.Duration.seconds(seconds: 3.0)
+        config.presentationStyle = .bottom
+        config.duration = SwiftMessages.Duration.seconds(seconds: 2.0)
         DispatchQueue.main.async(execute: {
             SwiftMessages.show(config: config, view: alert)
         })
